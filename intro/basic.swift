@@ -5,6 +5,6 @@ let myConstant = 10
 var myVariable = 25
 myVariable = 30
 
-// Format string in swift
+// template string (string interpolation) in swift
 print("My constant is: \(myConstant)")
 print("My sum is: \(myConstant + myVariable)")
