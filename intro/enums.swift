@@ -36,3 +36,10 @@ enum Foobar {
 
 let fbr = Foobar.Bar
 print(fbr.describe())
+
+// init?(rawValue) initializer to make instance of enum from raw value (if one exists)
+if let four = Numbers(rawValue: 4) {
+    print(four.describe())
+} else {
+    print("rawValue 4 not in Numbers")
+}
