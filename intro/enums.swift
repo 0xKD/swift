@@ -43,3 +43,22 @@ if let four = Numbers(rawValue: 4) {
 } else {
     print("rawValue 4 not in Numbers")
 }
+
+
+// Enums instances can have values associated with that instance
+// Such values are defined when the instance is created
+
+enum FooBar {
+    case Foo(String)
+    case Bar(String)
+}
+
+let fb_one = FooBar.Foo("foo!")
+let fb_two = FooBar.Bar("bar!")
+
+switch fb_two {  // try fb_one
+case let .Foo(str):
+    print("Foo says: \(str)")
+case let .Bar(str):
+    print("Oh noes! Bar says: \(str)")
+}
