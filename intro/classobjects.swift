@@ -23,7 +23,7 @@ print(shape.describe())
 class Square: Shape {
     var sideLength: Double {
         // property observer (to monitor changes)
-         willSet {
+        willSet {
             print("Run before setting sideLength to \(newValue)")
         }
         // observers do not go well with getter / setter (try adding getter / setter to this property)
