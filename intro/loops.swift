@@ -16,3 +16,17 @@ for var i = 0; i < 4; i++ {
 for i in 0...3 {
     print("\(i)")
 }
+
+
+// Iterate over dictionary (~ python .iteritems())
+var things = [
+    "fruits": ["banana", "apple", "grape"],
+    "vegetables": ["potato"],
+]
+
+for (kind, samples) in things {
+    print("\(kind)")
+    for sample in samples {
+        print("  => \(sample)")
+    }
+}
