@@ -34,7 +34,13 @@ myDict = [:]
 let name:String? = "hello"
 print(name == nil)
 
-let myName:String? = nil
+let myName:String? = "Salt"  // try changing to nil
 if let tempName = myName {
     print("not nil!: \(tempName)")
+} else {
+    print("nil is my name!")
 }
+
+// Handle optionals with ?? operator
+let defaultName = "John"
+print("My name is: \(myName ?? defaultName)")
