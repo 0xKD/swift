@@ -55,6 +55,12 @@ if d != nil {
     print("Converted value: \(d!)")
 }
 
+// when it is known that optional will have value once it is defined
+// iuo can be nil, but will trigger runtime error if used
+// it can still be checked for nil (iou != nil), or used with optional binding
+let iuo: String! = "Implicitly unwrapped optional"
+// as good as using ! on each use of the optional
+
 // Handle optionals with ?? operator
 let defaultName = "John"
 print("My name is: \(myName ?? defaultName)")
