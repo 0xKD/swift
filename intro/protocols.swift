@@ -49,4 +49,3 @@ extension Int: OddEven {
 let i = 100
 print(i.isEven)
 print(101.isEven)
-
