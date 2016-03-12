@@ -32,13 +32,27 @@ myDict = [:]
 
 // Optionals
 let name:String? = "hello"
-print(name == nil)
+print(name == nil)  // nil is absence of a value of a certain type
 
 let myName:String? = "Salt"  // try changing to nil
 if let tempName = myName {
     print("not nil!: \(tempName)")
 } else {
     print("nil is my name!")
+}
+
+let num = "123"
+// Optional Binding: check for value & extract into constant, in single action
+if let c = Int(num) {
+    print("Converted str to int (\(c))")
+} else {
+    print("Cannot convert \(num) to int")
+}
+
+let d = Int(num)  // returns an optional
+if d != nil {
+    // if certain that optional has value, force unwrap it (using !)
+    print("Converted value: \(d!)")
 }
 
 // Handle optionals with ?? operator
