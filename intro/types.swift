@@ -44,3 +44,32 @@ if let tempName = myName {
 // Handle optionals with ?? operator
 let defaultName = "John"
 print("My name is: \(myName ?? defaultName)")
+
+
+// Booleans
+let t = true
+let f = false
+
+if t {
+    print("Truthy!")
+} else {
+    print("Falsey!")
+}
+
+let i = 0
+// if i {  // implicit conversion to / interpretation as bool not allowed
+//     print("Won't work!")
+// }
+
+if i == 0 {  // result of comparisons is Bool, this is allowed
+    print("Yes!")
+}
+
+
+// Tuples
+let tup = (1, 2)
+let (numA, numB) = tup  // parens around numA, numB required (unlike Python)
+let (numC, _) = tup  // when you only need some value(s), use _ to ignore rest
+
+let anotherTup = (foo: "foo", bar: "bar")  // ~ python's namedtuple
+print(anotherTup.foo); print(anotherTup.bar)
