@@ -4,7 +4,7 @@
 class Robot {
     var name: String
     static let isSelfAware = false
-    
+
     // speak is an instance method, acting on a particular instance of Robot
     func speak() {
         print("Hello! My name is \(self.name)")
@@ -30,14 +30,14 @@ class Robot {
 
 
 // CustomStringConvertible is a protocol that enables printing via `description`
-struct Point: CustomStringConvertible {  
+struct Point: CustomStringConvertible {
     var x: Double
     var y: Double
 
     /*
      for value types (struct, enum), properties cannot be modified from within
      its instance method (default behaviour)
-     on adding the `mutating` keyword, changed properties can be persisted 
+     on adding the `mutating` keyword, changed properties can be persisted
     */
     mutating func centerToOrigin() {
         self.x = 0
