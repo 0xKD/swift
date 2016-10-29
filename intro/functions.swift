@@ -1,11 +1,12 @@
 func greet(name: String, day: String) -> String {
     return "Hello \(name), today is \(day)"
 }
-// arguments must be labeled (except first one)
-print(greet("Cat", day: "Caturday"))
+// arguments must be labeled (including the first one)
+// Swift < 3.0 did not require first argument to be labeled
+print(greet(name: "Cat", day: "Caturday"))
 
 // to avoid labeling, use `_` before param name
-func myGreet(name: String, _ day: String) -> String {
+func myGreet(_ name: String, _ day: String) -> String {
     return "Hello \(name), today is \(day)"
 }
 
@@ -13,7 +14,7 @@ print(myGreet("Mat", "Monday"))
 
 
 // return multiple values (return value similar to Python NamedTuple)
-func calcSomething(stuff: [Int]) -> (min: Int, max: Int) {
+func calcSomething(_ stuff: [Int]) -> (min: Int, max: Int) {
     var min = stuff[0]
     var max = stuff[0]
 
@@ -35,7 +36,7 @@ print(minmax.1)
 
 
 // returns an optional
-func calcAverage(nums: Int...) -> Int? {
+func calcAverage(_ nums: Int...) -> Int? {
     let lenNums = nums.count
     if lenNums > 0 {
         var sum = 0
@@ -52,8 +53,8 @@ print(calcAverage())
 
 
 // function is a first class object, can be passed as argument and returned
-func adder(num: Int) -> (Int -> Int) {
-    func add(val: Int) -> Int {
+func adder(_ num: Int) -> ((Int) -> Int) {
+    func add(_ val: Int) -> Int {
         return num + val
     }
     return add
@@ -64,10 +65,10 @@ print(addFive(7))
 print(addFive(28))
 
 // alternate syntax
-func adder2(num: Int) -> (Int -> Int) {
+func adder2(_ num: Int) -> ((Int) -> Int) {
     return {(number: Int) -> Int in number + num }
 }
-func adder3(num: Int) -> (Int -> Int) {
+func adder3(_ num: Int) -> ((Int) -> Int) {
     return { $0 + num }
 }
 
@@ -78,13 +79,13 @@ print(addSix(30))
 let nums = [1, 2, 3, 4, 5, 6]
 print(nums.map({num in 3 * num}))
 
-// .sort takes function (that takes two arguments and returns a bool)
-print(nums.sort({ $0 > $1 }))
-print(nums.sort(<))
+// .sorted takes function (that takes two arguments and returns a bool)
+print(nums.sorted(by: { $0 > $1 }))
+print(nums.sorted(by: <))
 
 /* trailing closure (written after function call) when you need to pass closure
 as final argument
 */
-print(nums.sort() { $0 > $1 })
+print(nums.sorted() { $0 > $1 })
 // if closure is the only argument, it can be written like this
-print(nums.sort { $0 < $1 })
+print(nums.sorted { $0 < $1 })
