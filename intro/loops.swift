@@ -9,9 +9,14 @@ for v in vals {
     print("Value is: \(v)")
 }
 
+// These (C-style loops) have been removed in Swift 3
+// and also the ++ (increment / decrement) operand
+// (Interestingly, both "features" don't exist in python either)
+/*
 for var i = 0; i < 4; i++ {
     print("\(i)")
 }
+*/
 
 for i in 0...3 {
     print("\(i)")

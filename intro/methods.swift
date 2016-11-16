@@ -17,7 +17,8 @@ class Robot {
     */
     static func destroyHuman() {
         if self.isSelfAware {
-            print("\(self.dynamicType) destroys Humans!")
+            // Changed from self.dynamicType in Swift 3
+            print("\(type(of: self)) destroys Humans!")
         } else {
             print("Nope…")
         }
@@ -48,7 +49,7 @@ struct Point: CustomStringConvertible {
      can also assign a new instance to self
      end result will be the same same as modifying individual properties
     */
-    mutating func copy(point: Point) {
+    mutating func copy(_ point: Point) {
         self = point
     }
 

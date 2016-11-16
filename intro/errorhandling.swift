@@ -1,11 +1,11 @@
-// ErrorType is built-in protocol that represents errors
-enum MyBandError: ErrorType {
+// Error is built-in protocol that represents errors (renamed from ErrorType)
+enum MyBandError: Error {
     case NoMic
     case TooLoud
     case MissingSlim
 }
 
-func playSong(songName: String) throws -> String {
+func playSong(_ songName: String) throws -> String {
     if songName.hasSuffix("mic") {
         throw MyBandError.NoMic
     } else if songName.hasSuffix("up") {
